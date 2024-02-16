@@ -1,0 +1,36 @@
+:root {
+    /* colors */
+    --clr-primary: #8D89F3;
+    --clr-secondary: #3A1F97;
+    --clr-nt-white: #FFFFFF;
+    /* fonts */
+    --ff-primary: 'Work Sans', sans-serif;
+    /* Font size */
+    --fs-h1: 1.75rem;
+    --fs-h2: 1rem;
+    --fs-h3: 2.313rem;
+    --fs-btn: 1rem;
+    --fs-p: 1rem;
+    --fs-footer: 1.125rem;
+    /* font weight */
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+
+    /* border radius */
+    --br-hero: 1.25rem;
+    --br-btn: 50%;
+}
+
+@media screen and (min-width: 800px) {
+    :root {
+        /* Font size */
+        --fs-h1: 3.125rem;
+        --fs-h2: 1.75rem;
+        --fs-h3: 3.938rem;
+        --fs-btn: 1.688rem;
+        --fs-p: 1.625rem;
+        --fs-footer: 1.875rem;
+    }
+
+}
