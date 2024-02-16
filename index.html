@@ -36,7 +36,7 @@
                         <a class="nav-link" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Super héroes</a>
+                        <a class="nav-link" href="#">Códigos</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link me-0" href="#">SuperHero API</a>
@@ -62,29 +62,31 @@
                 <img class="header-logo" src="./assets/img/logo.png" alt="kraken-logo">
             </div>
 
-            <div id="form" class="form-section">
+            <form id="form" class="form-section">
                 <h2 class="text-center form-title">Busca tu superhéroe por su código</h1>
 
                 <div class="input-container">
-                    <input type="text" id="name">
+                    <input id="numberInput" type="number" min="1" max="732" />
                 </div>
 
                 <div class="button-container">
-                    <button type="button" id="btn-search" >
+
+                    <button type="submit" id="btn-search" >
                         Buscar
                     </button>
+                    
                     <button type="button" id="btn-random">
                         Al azar
                     </button>
                 </div>
-
-            </div>
+            </form>
+            
         </div>
     </header>
 
 
     <!-- main -->
-    <main>
+    <main class="main-container">
 
         <!-- SuperHero Bio -->
         <section class="bio">

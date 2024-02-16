@@ -140,7 +140,14 @@ input {
                 height: 3rem;
             }
         }
+
+.main-container {
+    display: none;
+    height: 500px;
+    background-color: rgb(var(--clr-pr));
+}
         
+
 footer {
     display: none;
 }
