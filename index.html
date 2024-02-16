@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Super Hero search">
+    <meta name="keywords" content="Super Hero, search, find, super, hero">
+    <meta name="author" content="Nata">
+    <title>KRAKEN</title>
+
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <main>
+
+        <!-- Nav - Componente de bootstrap -->
+        <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+            <div class="container-fluid p-0 m-0">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img id="logo" src="./assets/img/logo.png" alt="logo">
+                </a>
+                <button class="navbar-toggler border-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Listado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre mí</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <!-- Header -->
+        <header>
+            <picture>
+                <source media="(min-width:426px)" srcset="./assets/img/header-desktop.png">
+                <img src="./assets/img/header-mobile.png" alt="">
+            </picture>
+
+            <div class="header-content">
+                <div class="header-title__wrapper">
+                    <h1 class="header-title">Bienvenido a KRAKEN</h1>
+                    <img src="./assets/img/logo.png" alt="kraken-logo">
+                </div>
+
+                <!-- Form - Componente de bootstrap -->
+                <div id="form" class="form-section">
+                    <h1 class="text-center">Busca tu superhéroe</h1>
+
+                    <div class="name-container">
+                        <input type="text" id="name" class="form-control">
+                    </div>
+
+                    <div class="button-container">
+                        <button type="button" id="btn-search" data-bs-toggle="tooltip" data-bs-placement="top"
+                            class="btn">
+                            Buscar
+                        </button>
+                        <button type="button" id="btn-random" data-bs-toggle="tooltip" data-bs-placement="top"
+                            class="btn">
+                            Al azar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- SuperHero Bio -->
+        <section class="bio">
+            <article class="bio-content">
+                <h2 class="bio-content__name"></h2>
+                <p class="bio-content__des"></p>
+            </article>
+
+            <article class="bio-img">
+            </article>
+        </section>
+
+
+
+        <!-- SuperHero Stats -->
+        <section class="super-stats">
+        </section>
+
+    </main>
+
+
+
+    <footer>
+        <picture>
+            <source media="(min-width: 426px)" srcset="./assets/img/footer-desktop.png">
+            <img src="./assets/img/footer-mobile.png" alt="">
+        </picture>
+    </footer>
+
+
+
+    <!-- Exrernal script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
