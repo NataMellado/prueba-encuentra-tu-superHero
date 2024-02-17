@@ -1,7 +1,8 @@
 # Prueba - Fundamentos de programación en JavaScript
 
-![Desktop Screenshot](./assets/design/screenshot-desktop.png)
-![Desktop Mobile](./assets/design/screenshot-mobile.png)
+![](./assets/design/screenshot-desktop.png)
+<img src="./assets/design/screenshot-mobile.png" width="50%" >
+
 
 ## Construido con
 
