@@ -1,6 +1,6 @@
 :root {
     /* colors */
-    --clr-pr: 141, 137, 243;
+    --clr-pr: 141, 137, 255;
     --clr-snd: 58, 31, 151;
     --clr-nt-white: 255, 255, 255;
     /* fonts */
@@ -31,7 +31,6 @@
         --fs-h2: 1.5rem;
         --fs-h3: 3.938rem;
         --fs-btn: 1.3rem;
-        --fs-p: 1.625rem;
         --fs-footer: 1.5rem;
         --fs-nav: 1.1rem;
     }
