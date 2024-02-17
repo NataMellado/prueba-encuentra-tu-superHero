@@ -1,34 +1,27 @@
 $(document).ready(function() {
+
+    // Listener for the form
     $('#form').submit(function(event) {
         event.preventDefault(); 
-
-        showMain();
-        getCharacterData($('#numberInput').val());
-
-        const scrollMain = document.getElementById('main-container');
-        scrollMain.scrollIntoView({ behavior: 'smooth' });
+        if (validateNumber($('#numberInput').val())) {
+            getCharacterData($('#numberInput').val());
+            displayMain();
+            scrollToMain();
+        }
     });
 
     // Listener for the random button
     $('#btn-random').click(function() {
-        let mainContainer = $('#main-container, #footer-container');
-
         const randomId = Math.floor(Math.random() * 732) + 1;
         getCharacterData(parseInt(randomId));
-        mainContainer.css('display', 'block');
-
-        const scrollMain = document.getElementById('main-container');
-        scrollMain.scrollIntoView({ behavior: 'smooth' });
+        displayMain();
+        scrollToMain();
     });
 
-    // Function to show the main and footer if the number is valid
-    function showMain() {
-        let numberInput = $('#numberInput').val(),
-            mainContainer = $('#main-container, #footer-container');
-
-        if (validateNumber(numberInput)) {
-            mainContainer.css('display', 'block');
-        }
+    // Function to display the main and footer
+    function displayMain() {
+        let mainContainer = $('#main-container, #footer-container');
+        mainContainer.css('display', 'block');
     }
 
     // Function to validate the number
@@ -37,7 +30,13 @@ $(document).ready(function() {
         return !isNaN(parsedNumber) && parsedNumber >= 1 && parsedNumber <= 732;
     }
 
-    // Use of ajax to get the data from the API
+    //Function to animate the scroll to the main
+    function scrollToMain() {
+        const scrollMain = document.getElementById('main-container');
+        scrollMain.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // function to get the character data from the API using ajax
     function getCharacterData(number) {
         $.ajax({
             url: `https://superheroapi.com/api.php/2619421814940190/${number}`,
@@ -45,10 +44,7 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(data) {
                 if (data.response === 'success') {
-                    
-                    const bioContainer = $('.bio');
-                    const statsContainer = $('#chartContainer');
-                    
+                       
                     // Template for the bio
                     const bioTemplate = `
                         <article class="bio-content">
@@ -81,9 +77,7 @@ $(document).ready(function() {
                             <img src="${data.image.url}" alt="Hero picture" />
                         </article>
                     `;
-                    bioContainer.empty();
-                    bioContainer.append(bioTemplate);
-
+           
                     // Template for the stats
                     const datosXY = [];
                     for (let key in data.powerstats) {
@@ -115,13 +109,15 @@ $(document).ready(function() {
                             },
                           ],
                     };
-
-                    statsContainer.empty();
-                    statsContainer.CanvasJSChart(statTemplate);
-
+          
+                    // Append the templates to the DOM
+                    $('.bio').empty();
+                    $('#chartContainer').empty();
+                    
+                    $('.bio').append(bioTemplate);
+                    $('#chartContainer').CanvasJSChart(statTemplate);
                 }
             }
         });
     }
-
 });
